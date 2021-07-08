@@ -1,0 +1,52 @@
+.g_scrollLock {
+    overflow: hidden !important;
+    width: auto
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-Light.woff) format("woff");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-Regular.woff) format("woff");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-Medium.woff) format("woff");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-SemiBd.woff) format("woff");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-Bold.woff) format("woff");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Lucas;
+    src: url(/shared_res/agility/commons/fonts/NespressoLucas-XtraBd.woff) format("woff");
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap
+}

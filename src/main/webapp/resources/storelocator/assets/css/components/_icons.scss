@@ -1,0 +1,90 @@
+/*------------------------------------*\
+                Pictogrammes
+\*------------------------------------*/
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+
+	svg {
+		display: block;
+	}
+}
+
+
+.icon_target,
+.svg_target {
+	width: 23px;
+	height: 23px;
+
+	* {
+		fill: $grey-strong;
+	}
+}
+
+
+.icon_options,
+.svg_options {
+	width: 17px;
+	height: 18px;
+
+	* {
+		fill: $grey-strong;
+	}
+}
+
+
+.icon_phone,
+.svg_phone {
+	width: 15px;
+	height: 22px;
+
+	* {
+		fill: $gold;
+	}
+}
+
+.icon_direction,
+.svg_direction {
+	width: 23px;
+	height: 23px;
+
+	* {
+		fill: $gold;
+	}
+}
+
+
+.icon_wifi,
+.svg_wifi {
+	width: 14px;
+	height: 11px;
+
+	* {
+		fill: $grey-mid;
+	}
+}
+
+.icon_recycling,
+.svg_recycling,
+.icon_recycle,
+.svg_recycle {
+	width: 8px;
+	height: 14px;
+
+	* {
+		fill: $grey-mid;
+	}
+}
+
+.icon_wheelchair,
+.svg_wheelchair,
+.icon_handicap,
+.svg_handicap {
+	width: 12px;
+	height: 14px;
+
+	* {
+		fill: $grey-mid;
+	}
+}

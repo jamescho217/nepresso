@@ -1,0 +1,152 @@
+.cluster div {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border-radius: 50%;
+    border: 4px solid white;
+    background: black;
+}
+
+.cluster:hover div {
+    background: #986F38;
+}
+
+.cluster div {
+    width: 100% !important;
+    line-height: 32px !important;
+}
+
+.shop-detail .shop-content,
+.shops {
+    overflow-y: auto;
+}
+
+.loaderV4 {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+    z-index: 1;
+    /*background-image: url('../img/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center center;*/
+}
+
+#map {
+    opacity: 1;
+    filter: blur(0px);
+    transition: all 500ms ease-in-out;
+}
+
+#map .cluster {
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+}
+
+.loaderV4.active {
+    opacity: .0;
+}
+
+/* Baidu suggestion list */
+
+.tangram-suggestion-main {
+    z-index: 2;
+}
+
+.box-locator {
+    z-index: 2;
+}
+
+.geoloc-btn {
+    position: absolute;
+    background: url('../img/geoloc_off.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    margin-left: -40px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.geoloc-btn.activated {
+    background: url('../img/geoloc_on.png');
+    background-size: cover;
+}
+
+.shop-item:focus:before {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.shop-item:focus {
+    outline: none;
+}
+
+.centerMarker {
+    z-index: 500;
+}
+
+.Capabilities-item {
+    margin-bottom: 5px;
+}
+
+.shop-item {
+    padding: 10px 5px 10px 5px;
+}
+
+#filters li {
+    display: none;
+}
+
+#filters li.vis {
+    display: block;
+}
+
+.form-search .trigger-options .list-options {
+    padding: 20px 15px;
+}
+
+.trigger-options {
+    transition: opacity .3s linear;
+}
+
+.box-locator,
+#search {
+    touch-action: none;
+    -ms-touch-action: none;
+}
+
+#StoreDetail:focus {
+    outline: none;
+}
+
+.section-map {
+    background-color: white;
+}
+
+#filters label {
+    padding: 5px 0 5px 30px;
+}
+
+.geoloc-btn.loading {
+    background: url('../img/loader.gif');
+}
+
+@media only screen and (min-width: 769px) {
+    .shop-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    html:not(.close-intro) .box-locator .tabs ul li a {
+        max-height: 95px;
+    }
+}

@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Lucas";
+    src: url("../../assets/fonts/NespressoLucas-Regular.woff") format('woff');
+}
+
+@font-face {
+    font-family: "Lucas";
+    src: url("../../assets/fonts/NespressoLucas-Light.woff") format('woff');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Lucas";
+    src: url("../../assets/fonts/NespressoLucas-XtraBd.woff") format('woff');
+    font-weight: bold;
+}
+
+#poiExplanation h1 {
+    color: #000;
+    font-family: Lucas, Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    letter-spacing: 12px;
+    line-height: 64px;
+    font-weight: 800;
+}
+
+#poiExplanation h2 {
+    color: #000;
+    font-family: Lucas, Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    letter-spacing: 8px;
+    line-height: 48px;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+#poiExplanation h3 {
+    color: #000;
+    font-family: Lucas, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 24px;
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#poiExplanation p {
+    color: #000;
+    font-family: Lucas, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+#poiExplanation strong {
+    font-weight: 700;
+}
+
+#poiExplanation img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+#poiExplanation {
+    background: #fff;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#poiExplanation .poi-type p {
+    text-align: center;
+}
+
+#poiExplanation #poiExplanationContainer {
+    max-width: 996px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#poiExplanation .poi-type {
+    float: left;
+    width: 33.33%;
+    background: #fff;
+    margin-bottom: 20px;
+    padding-left: 1.66%;
+    padding-right: 1.66%;
+}
+
+#poiExplanation .poi-type h3,
+#poiExplanation .poi-type p {
+    text-align: center;
+}
+
+#poiExplanation #poi-type-remark {
+    clear: both;
+    padding-left: 1.66%;
+    padding-right: 1.66%;
+    /*padding-top: 20px;*/
+}
+
+@media screen and (max-width: 995px) {
+    #poiExplanation h1 {
+        font-family: Lucas, Helvetica, Arial, sans-serif;
+        font-size: 36px;
+        letter-spacing: 9px;
+        line-height: 48px;
+        font-weight: 800;
+    }
+    #poiExplanation h2 {
+        font-family: Lucas, Helvetica, Arial, sans-serif;
+        font-size: 30px;
+        letter-spacing: 6px;
+        line-height: 40px;
+        font-weight: 300;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #poiExplanation .poi-type {
+        width: 100%;
+        padding-bottom: 15px;
+    }
+}
+
+#wrapper {
+    max-height: 900px;
+}

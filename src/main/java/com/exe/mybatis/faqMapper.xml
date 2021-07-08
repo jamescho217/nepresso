@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.faqMapper">
+
+<select id="faqmaxNum" resultType="int">
+	select nvl(max(fnum),0) from faq
+</select>
+
+<insert id="faqinsertData" parameterType="com.exe.dto.FaqDTO">
+	insert into faq(fnum,fcategory,fsubject,fcontent,hitCount)
+	values(#{fnum},#{fcategory},#{fsubject},#{fcontent},0)
+</insert>
+
+<select id="faqgetDataCount" parameterType="hashMap" resultType="int">
+	select nvl(count(*),0) from faq
+	where ${searchKey} like '%' || #{searchValue} || '%'
+</select>
+
+<select id="faqgetDataCount1" parameterType="hashMap" resultType="int">
+	select nvl(count(*),0) from faq
+	where ${searchKey} like '%' || #{searchValue} || '%' and fcategory like '%' || #{cate} || '%'
+</select>
+
+<select id="faqgetLists" parameterType="map" resultType="com.exe.dto.FaqDTO">
+	select * from (
+	select rownum rnum, data.* from (
+	select fnum,fcategory,fsubject,fcontent,hitCount
+	from faq where ${searchKey} like '%' || #{searchValue} || '%'
+	order by fnum asc) data)
+<![CDATA[
+	where rnum>=#{start} and rnum<=#{end}
+]]>
+</select>
+
+<select id="faqgetLists1" parameterType="map" resultType="com.exe.dto.FaqDTO">
+	select * from (
+	select rownum rnum, data.* from (
+	select fnum,fcategory,fsubject,fcontent,hitCount
+	from faq where ${searchKey} like '%' || #{searchValue} || '%' and fcategory like '%' || #{cate} || '%'
+	order by fnum asc) data)
+<![CDATA[
+	where rnum>=#{start} and rnum<=#{end}
+]]>
+</select>
+
+<update id="faqupdateHitCount" parameterType="int">
+	update faq set hitCount=hitCount+1 where fnum=#{fnum}
+</update>
+
+<select id="faqgetReadData" parameterType="int" resultType="com.exe.dto.FaqDTO">
+	select fnum,fcategory,fsubject,fcontent,hitCount
+	from faq where fnum=#{fnum}
+</select>
+
+<update id="faqupdateData" parameterType="com.exe.dto.FaqDTO">
+	update faq set fcategory=#{fcategory},fsubject=#{fsubject},fcontent=#{fcontent}
+	where fnum=#{fnum}
+</update>
+
+<delete id="faqdeleteData" parameterType="int">
+	delete faq where fnum=#{fnum}
+</delete>
+
+<!-- @@@@@@@NOTICE@@@@@@@@@ -->
+<select id="faqnoticemaxNum" resultType="int">
+	select nvl(max(nnum),0) from notice
+</select>
+
+<insert id="faqnoticeinsertData" parameterType="com.exe.dto.NoticeDTO">
+	insert into notice(nnum,nsubject,ncontent,ndate)
+	values(#{nnum},#{nsubject},#{ncontent},#{ndate})
+</insert>
+
+<select id="faqngetDataCount" parameterType="hashMap" resultType="int">
+	select nvl(count(*),0) from notice
+	where ${searchKey} like '%' || #{searchValue} || '%'
+</select>
+
+<select id="faqngetLists" parameterType="map" resultType="com.exe.dto.NoticeDTO">
+	select * from (
+	select rownum rnum, data.* from (
+	select nnum,nsubject,ncontent,ndate
+	from notice where ${searchKey} like '%' || #{searchValue} || '%'
+	order by nnum asc) data)
+<![CDATA[
+	where rnum>=#{start} and rnum<=#{end}
+]]>
+</select>
+
+<select id="faqngetReadData" parameterType="int" resultType="com.exe.dto.NoticeDTO">
+	select nnum,nsubject,ncontent,ndate
+	from notice where nnum=#{nnum}
+</select>
+
+<update id="faqnupdateData" parameterType="com.exe.dto.NoticeDTO">
+	update notice set nsubject=#{nsubject},ncontent=#{ncontent},ndate=#{ndate}
+	where nnum=#{nnum}
+</update>
+
+
+
+</mapper>

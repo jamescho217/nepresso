@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nesPdMapper">
+
+<select id="pdmaxNum1" resultType="int">
+	select nvl(max(co_num),0) from cp_original
+</select>
+
+<select id="pdmaxNum2" resultType="int">
+	select nvl(max(cv_num),0) from cp_vertuo
+</select>
+
+<select id="pdmaxNum3" resultType="int">
+	select nvl(max(mo_num),0) from ms_original
+</select>
+
+<select id="pdmaxNum4" resultType="int">
+	select nvl(max(mv_num),0) from ms_vertuo
+</select>
+
+<select id="pdmaxNum5" resultType="int">
+	select nvl(max(ao_num),0) from ao_original
+</select>
+
+<insert id="pdinsertData1" parameterType="com.exe.dto.NesCoDTO">
+	insert into cp_original(co_num,co_type,co_modelName1,co_modelName2,co_listCoffee,co_listContent,co_price,co_sleevePrice,co_quantity,
+	co_intensity,co_intensity2,co_profile,co_notes,co_origin,co_cupSize1,co_cupSize2,co_cupSize3,co_cupSize4,co_cupSize5,co_cupSize6,co_sp1,co_sp2,co_sp3,
+	co_aticleCoffee1,co_aticleCoffee2,co_aticleCoffee3,co_aticleCoffee4,co_aticleCoffee5,co_longContent,co_bg,co_bgColor,co_bigName1,co_bigName2,
+	co_atContent1,co_atContent2,co_atContent3,co_atContent4,co_atContent5,co_atContent6,co_atContent7,co_atContent8,co_atContent9,co_atContent10,
+	co_atContent11,co_atContent12,co_roastiness1,co_roastiness2,co_acidity1,co_acidity2,co_bitterness1,co_bitterness2,co_body1,co_body2,
+	co_atOrigin,co_atRoasting,co_atProfile,co_gram,co_coffee) 
+	values (#{co_num},#{co_type},#{co_modelName1},#{co_modelName2},#{co_listCoffee},#{co_listContent},#{co_price},#{co_sleevePrice},#{co_quantity},
+	#{co_intensity},#{co_profile},#{co_notes},#{co_origin},#{co_cupSize1},#{co_cupSize2},#{co_cupSize3},#{co_cupSize4},#{co_cupSize5},#{co_cupSize6},
+	#{co_sp1},#{co_sp2},#{co_sp3},#{co_aticleCoffee1},#{co_aticleCoffee2},#{co_aticleCoffee3},#{co_aticleCoffee4},#{co_aticleCoffee5},
+	#{co_longContent},#{co_bg},#{co_bigName1},#{co_bigName2},#{co_atContent1},#{co_atContent2},#{co_atContent3},#{co_atContent4},#{co_atContent5},
+	#{co_atContent6},#{co_atContent7},#{co_atContent8},#{co_atContent9},#{co_atContent10},#{co_atContent11},#{co_atContent12},#{co_roastiness1},
+	#{co_roastiness2},#{co_acidity1},#{co_acidity2},#{co_bitterness1},#{co_bitterness2},#{co_body1},#{co_body2},#{co_atOrigin},#{co_atRoasting},
+	#{co_atProfile},#{co_gram},#{co_coffee})
+</insert>
+
+<insert id="pdinsertData2" parameterType="com.exe.dto.NesCvDTO">
+	insert into cp_vertuo(cv_num,cv_type,cv_modelName1,cv_modelName2,cv_listCoffee,cv_listContent,cv_price,cv_sleevePrice,cv_quantity,
+	cv_intensity,cv_intensity2,cv_profile,cv_notes,cv_origin,cv_cupSize1,cv_cupSize2,cv_cupSize3,cv_cupSize4,cv_cupSize5,cv_cupSize6,cv_cupSize7,cv_cupSize8,
+	cv_cupSize9,cv_cupSize10,cv_sp1,cv_sp2,cv_sp3,cv_sp4,cv_sp5,cv_aticleCoffee1,cv_aticleCoffee2,cv_aticleCoffee3,cv_aticleCoffee4,cv_aticleCoffee5,
+	cv_shortContent,cv_longContent,cv_bg,cv_bgColor,cv_bigName1,cv_bigName2,cv_atContent1,cv_atContent2,cv_atContent3,cv_atContent4,cv_atContent5,cv_atContent6,
+	cv_atContent7,cv_atContent8,cv_atContent9,cv_atContent10,cv_atContent11,cv_atContent12,cv_atContent13,cv_roastiness1,cv_roastiness2,cv_acidity1,
+	cv_acidity2,cv_bitterness1,cv_bitterness2,cv_body1,cv_body2,cv_atOrigin,cv_atRoasting,cv_atProfile,cv_gram,cv_coffee) 
+	values (#{cv_num},#{cv_type},#{cv_modelName1},#{cv_modelName2},#{cv_listCoffee},#{cv_listContent},#{cv_price},#{cv_sleevePrice},#{cv_quantity},
+	#{cv_intensity},#{cv_profile},#{cv_notes},#{cv_origin},#{cv_cupSize1},#{cv_cupSize2},#{cv_cupSize3},#{cv_cupSize4},#{cv_cupSize5},#{cv_cupSize6},
+	#{cv_cupSize7},#{cv_cupSize8},#{cv_cupSize9},#{cv_cupSize10},#{cv_sp1},#{cv_sp2},#{cv_sp3},#{cv_sp4},#{cv_sp5},#{cv_aticleCoffee1},
+	#{cv_aticleCoffee2},#{cv_aticleCoffee3},#{cv_aticleCoffee4},#{cv_aticleCoffee5},#{cv_shortContent},#{cv_longContent},#{cv_bg},#{cv_bigName1},
+	#{cv_bigName2},#{cv_atContent1},#{cv_atContent2},#{cv_atContent3},#{cv_atContent4},#{cv_atContent5},#{cv_atContent6},#{cv_atContent7},
+	#{cv_atContent8},#{cv_atContent9},#{cv_atContent10},#{cv_atContent11},#{cv_atContent12},#{cv_atContent13},#{cv_roastiness1},#{cv_roastiness2},
+	#{cv_acidity1},#{cv_acidity2},#{cv_bitterness1},#{cv_bitterness2},#{cv_body1},#{cv_body2},#{cv_atOrigin},#{cv_atRoasting},#{cv_atProfile},
+	#{cv_gram},#{cv_coffee})
+</insert>
+
+<insert id="pdinsertData3" parameterType="com.exe.dto.NesMoDTO">
+	insert into ms_original(mo_num,mo_modelName1,mo_modelName2,mo_modelName3,mo_listMachine,mo_listContent,mo_price,mo_quantity,
+	mo_atMachine1,mo_atMachine2,mo_atMachine3,mo_atMachine4,mo_atMachine5,mo_atMachine6,mo_atMachine7,mo_atMachine8,mo_atMachine9,mo_atMachine10,
+	mo_atMachine11,mo_atMachine12,mo_sp1,mo_sp2,mo_sp3,mo_sp4,mo_sp5,mo_sp6,mo_sp7,mo_atContent1,mo_atContent2,mo_weight,mo_waterTank,mo_milkContainer,
+	mo_container,mo_warranty,mo_size1,mo_size2,mo_color,mo_made,mo_info1,mo_info2,mo_info3,mo_info4,mo_info5,mo_info6,mo_info7,mo_info8,mo_info9) 
+	values (#{mo_num},#{mo_modelName1},#{mo_modelName2},#{mo_modelName3},#{mo_listMachine},#{mo_listContent},#{mo_price},#{mo_quantity},#{mo_atMachine1},
+	#{mo_atMachine2},#{mo_atMachine3},#{mo_atMachine4},#{mo_atMachine5},#{mo_atMachine6},#{mo_atMachine7},#{mo_atMachine8},#{mo_atMachine9},#{mo_atMachine10},
+	#{mo_atMachine11},#{mo_atMachine12},#{mo_sp1},#{mo_sp2},#{mo_sp3},#{mo_sp4},#{mo_sp5},#{mo_sp6},#{mo_sp7},#{mo_atContent1},#{mo_atContent2},#{mo_weight},
+	#{mo_waterTank},#{mo_milkContainer},#{mo_container},#{mo_warranty},#{mo_size1},#{mo_size2},#{mo_color},#{mo_made},#{mo_info1},#{mo_info2},#{mo_info3},
+	#{mo_info4},#{mo_info5},#{mo_info6},#{mo_info7},#{mo_info8},#{mo_info9})
+</insert>
+
+<insert id="pdinsertData4" parameterType="com.exe.dto.NesMvDTO">
+	insert into ms_vertuo(mv_num,mv_modelName1,mv_modelName2,mv_modelName3,mv_listMachine,mv_listContent,mv_price,mv_quantity,mv_atMachine1,
+	mv_atMachine2,mv_atMachine3,mv_atMachine4,mv_atMachine5,mv_atMachine6,mv_atMachine7,mv_atMachine8,mv_atMachine9,mv_sp1,mv_sp2,mv_sp3,mv_sp4,mv_sp5,
+	mv_atContent1,mv_atContent2,mv_weight,mv_waterTank,mv_container,mv_warranty,mv_size1,mv_size2,mv_color,mv_made,mv_info1,mv_info2,mv_info3,mv_info4,
+	mv_info5,mv_info6,mv_info7,mv_info8,mv_info9) 
+	values (#{mv_num},#{mv_modelName1},#{mv_modelName2},#{mv_modelName3},#{mv_listMachine},#{mv_listContent},#{mv_price},#{mv_quantity},#{mv_atMachine1},
+	#{mv_atMachine2},#{mv_atMachine3},#{mv_atMachine4},#{mv_atMachine5},#{mv_atMachine6},#{mv_atMachine7},#{mv_atMachine8},#{mv_atMachine9},#{mv_sp1},
+	#{mv_sp2},#{mv_sp3},#{mv_sp4},#{mv_sp5},#{mv_atContent1},#{mv_atContent2},#{mv_weight},#{mv_waterTank},#{mv_container},#{mv_warranty},#{mv_size1},
+	#{mv_size2},#{mv_color},#{mv_made},#{mv_info1},#{mv_info2},#{mv_info3},#{mv_info4},#{mv_info5},#{mv_info6},#{mv_info7},#{mv_info8},#{mv_info9})
+</insert>
+
+<insert id="pdinsertData5" parameterType="com.exe.dto.NesMvDTO">
+	insert into acc_original(ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,ao_atContent1,
+	ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg) 
+	values (#{ao_num},#{ao_type},#{ao_modelName},#{ao_listAcc},#{ao_price},#{ao_quantity},#{ao_atAcc1},#{ao_atAcc2},#{ao_atAcc3},#{ao_atAcc4},
+	#{ao_atAcc5},#{ao_atContent1},#{ao_atContent2},#{ao_atContent3},#{ao_atContent4},#{ao_atContent5},#{ao_atContent6},#{ao_atContent7},#{ao_atContent8},
+	#{ao_atContent9},#{ao_bg})
+</insert>
+
+<select id="pdgetLists1" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3
+	from cp_original where co_type='슬리브팩' order by co_num asc
+</select>
+
+<select id="pdgetLists2" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3
+	from cp_original where co_type='바리스타 크리에이션' order by co_num asc
+</select>
+
+<select id="pdgetLists3" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3,co_intensity
+	from cp_original where co_type='마스터 오리진' order by co_num asc
+</select>
+
+<select id="pdgetLists4" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3,co_intensity
+	from cp_original where co_type='월드 익스플로레이션' order by co_num asc
+</select>
+
+<select id="pdgetLists5" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3,co_intensity
+	from cp_original where co_type='이스피라치오네 이탈리아나' order by co_num asc
+</select>
+
+<select id="pdgetLists6" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_listCoffee,co_modelName1,co_listContent,co_cupSize1,co_cupSize2,co_cupSize3,
+	co_price,co_sleevePrice,co_sp1,co_sp2,co_sp3,co_intensity
+	from cp_original where co_type='에스프레소' order by co_num asc
+</select>
+
+<select id="pdgetLists7" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_cupSize4,cv_cupSize5,cv_price
+	from cp_vertuo where cv_type='슬리브팩' order by cv_num asc
+</select>
+
+<select id="pdgetLists8" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_sp1,cv_sp2,cv_sp3
+	from cp_vertuo where cv_type='바리스타 크리에이션' order by cv_num asc
+</select>
+
+<select id="pdgetLists9" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='마스터 오리진' order by cv_num asc
+</select>
+
+<select id="pdgetLists10" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='머그' order by cv_num asc
+</select>
+
+<select id="pdgetLists11" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='에스프레소' order by cv_num asc
+</select>
+
+<select id="pdgetLists12" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='더블 에스프레소' order by cv_num asc
+</select>
+
+<select id="pdgetLists13" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='알토' order by cv_num asc
+</select>
+
+<select id="pdgetLists14" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_listCoffee,cv_modelName1,cv_listContent,cv_cupSize1,cv_cupSize2,cv_cupSize3,
+	cv_price,cv_sleevePrice,cv_intensity
+	from cp_vertuo where cv_type='그랑 룽고' order by cv_num asc
+</select>
+
+<select id="pdgetLists15" resultType="com.exe.dto.NesMoDTO">
+	select mo_num,mo_modelName1,mo_listMachine,mo_listContent,mo_price
+	from ms_original where rowid in (select max(rowid) from ms_original group by mo_modelName1) order by mo_num asc
+</select>
+
+<select id="pdgetLists16" resultType="com.exe.dto.NesMvDTO">
+	select mv_num,mv_modelName1,mv_listMachine,mv_listContent,mv_price
+	from ms_vertuo where rowid in (select max(rowid) from ms_vertuo group by mv_modelName1) order by mv_num asc
+</select>
+
+<select id="pdgetLists17" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='네스프레소 x 키아라 페라니 한정판 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists18" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='같이 만드는 그린 모먼트' order by ao_num asc
+</select>
+
+<select id="pdgetLists19" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='에어로치노' order by ao_num asc
+</select>
+
+<select id="pdgetLists20" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='스낵 및 소품' order by ao_num asc
+</select>
+
+<select id="pdgetLists21" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='루메 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists22" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='노마드 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists23" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='뷰 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists24" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='보틀' order by ao_num asc
+</select>
+
+<select id="pdgetLists25" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='버츄오 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists26" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='오리진 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists27" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='퓨어 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists28" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='터치 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists29" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='픽시 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetLists30" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_type='리빌 컬렉션' order by ao_num asc
+</select>
+
+<select id="pdgetReadData1" parameterType="int" resultType="com.exe.dto.NesCoDTO">
+	select co_num,co_type,co_modelName1,co_modelName2,co_listCoffee,co_listContent,co_price,co_sleevePrice,co_quantity,
+	co_intensity,co_intensity2,co_profile,co_notes,co_origin,co_cupSize1,co_cupSize2,co_cupSize3,co_cupSize4,co_cupSize5,co_cupSize6,co_sp1,co_sp2,co_sp3,
+	co_aticleCoffee1,co_aticleCoffee2,co_aticleCoffee3,co_aticleCoffee4,co_aticleCoffee5,co_longContent,co_bg,co_bgColor,co_bigName1,co_bigName2,
+	co_atContent1,co_atContent2,co_atContent3,co_atContent4,co_atContent5,co_atContent6,co_atContent7,co_atContent8,co_atContent9,co_atContent10,
+	co_atContent11,co_atContent12,co_roastiness1,co_roastiness2,co_acidity1,co_acidity2,co_bitterness1,co_bitterness2,co_body1,co_body2,
+	co_atOrigin,co_atRoasting,co_atProfile,co_gram,co_coffee
+	from cp_original where co_num=#{co_num}
+</select>
+
+<select id="pdgetReadData2" parameterType="int" resultType="com.exe.dto.NesCvDTO">
+	select cv_num,cv_type,cv_modelName1,cv_modelName2,cv_listCoffee,cv_listContent,cv_price,cv_sleevePrice,cv_quantity,
+	cv_intensity,cv_intensity2,cv_profile,cv_notes,cv_origin,cv_cupSize1,cv_cupSize2,cv_cupSize3,cv_cupSize4,cv_cupSize5,cv_cupSize6,cv_cupSize7,cv_cupSize8,
+	cv_cupSize9,cv_cupSize10,cv_sp1,cv_sp2,cv_sp3,cv_sp4,cv_sp5,cv_aticleCoffee1,cv_aticleCoffee2,cv_aticleCoffee3,cv_aticleCoffee4,cv_aticleCoffee5,
+	cv_shortContent,cv_longContent,cv_bg,cv_bgColor,cv_bigName1,cv_bigName2,cv_atContent1,cv_atContent2,cv_atContent3,cv_atContent4,cv_atContent5,cv_atContent6,
+	cv_atContent7,cv_atContent8,cv_atContent9,cv_atContent10,cv_atContent11,cv_atContent12,cv_atContent13,cv_roastiness1,cv_roastiness2,cv_acidity1,
+	cv_acidity2,cv_bitterness1,cv_bitterness2,cv_body1,cv_body2,cv_atOrigin,cv_atRoasting,cv_atProfile,cv_gram,cv_coffee
+	from cp_vertuo where cv_num=#{cv_num}
+</select>
+
+<select id="pdgetReadData3" parameterType="int" resultType="com.exe.dto.NesMoDTO">
+	select mo_num,mo_modelName1,mo_modelName2,mo_modelName3,mo_listMachine,mo_listContent,mo_price,mo_quantity,mo_atMachine1,mo_atMachine2,mo_atMachine3,
+	mo_atMachine4,mo_atMachine5,mo_atMachine6,mo_atMachine7,mo_atMachine8,mo_atMachine9,mo_atMachine10,mo_atMachine11,mo_atMachine12,mo_sp1,mo_sp2,mo_sp3,
+	mo_sp4,mo_sp5,mo_sp6,mo_sp7,mo_atContent1,mo_atContent2,mo_weight,mo_waterTank,mo_milkContainer,mo_container,mo_warranty,mo_size1,mo_size2,mo_color,
+	mo_made,mo_info1,mo_info2,mo_info3,mo_info4,mo_info5,mo_info6,mo_info7,mo_info8,mo_info9
+	from ms_original where mo_num=#{mo_num}
+</select>
+
+<select id="pdgetReadData4" parameterType="int" resultType="com.exe.dto.NesMvDTO">
+	select mv_num,mv_modelName1,mv_modelName2,mv_modelName3,mv_listMachine,mv_listContent,mv_price,mv_quantity,mv_atMachine1,mv_atMachine2,
+	mv_atMachine3,mv_atMachine4,mv_atMachine5,mv_atMachine6,mv_atMachine7,mv_atMachine8,mv_atMachine9,mv_sp1,mv_sp2,mv_sp3,mv_sp4,mv_sp5,
+	mv_atContent1,mv_atContent2,mv_weight,mv_waterTank,mv_container,mv_warranty,mv_size1,mv_size2,mv_color,mv_made,mv_info1,mv_info2,mv_info3,
+	mv_info4,mv_info5,mv_info6,mv_info7,mv_info8,mv_info9
+	from ms_vertuo where mv_num=#{mv_num}
+</select>
+
+<select id="pdgetReadData5" parameterType="int" resultType="com.exe.dto.NesAoDTO">
+	select ao_num,ao_type,ao_modelName,ao_listAcc,ao_price,ao_quantity,ao_atAcc1,ao_atAcc2,ao_atAcc3,ao_atAcc4,ao_atAcc5,
+	ao_atContent1,ao_atContent2,ao_atContent3,ao_atContent4,ao_atContent5,ao_atContent6,ao_atContent7,ao_atContent8,ao_atContent9,ao_bg
+	from acc_original where ao_num=#{ao_num}
+</select>
+
+</mapper>

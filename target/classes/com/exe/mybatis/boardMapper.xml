@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.boardMapper">
+
+<insert id="bpinsertData" parameterType="com.exe.dto.ProfileDTO">
+	insert into board_profile(pageUserEmail, pageUserName, profileImage, boardNum, follower, nickname)
+	values(#{pageUserEmail}, #{pageUserName}, 'person.png', 0, 0, #{nickname})
+</insert>
+
+<update id="follwerUp" parameterType="String">
+	update board_profile set follwer=follwer+1 where pageUserEmail=#{pageUserEmail}
+</update>
+
+<update id="follwerDown" parameterType="String">
+	update board_profile set follwer=follwer-1 where pageUserEmail=#{pageUserEmail}
+</update>
+
+<update id="boardNumUp" parameterType="String">
+	update board_profile set boardNum=boardNum+1 where pageUserEmail=#{pageUserEmail}
+</update>
+
+<update id="boardNumDown" parameterType="String">
+	update board_profile set boardNum=boardNum-1 where pageUserEmail=#{pageUserEmail}
+</update>
+
+<update id="bpupdateData" parameterType="com.exe.dto.ProfileDTO">
+	update board_profile set profileImage=#{profileImage} where pageUserEmail=#{pageUserEmail}
+</update>
+
+<update id="bpupdateData2" parameterType="com.exe.dto.ProfileDTO">
+	update board_profile set pageUserEmail=#{pageUserEmail},pageUserName=#{pageUserName},nickname=#{nickname}
+	where pageUserEmail=#{pageUserEmail}
+</update>
+
+<select id="bsmaxNum" resultType="int">
+	select nvl(max(num),0) from board_story
+</select>
+
+<select id="bcmaxNum" resultType="int">
+	select nvl(max(comment_num),0) from board_comment
+</select>
+
+<insert id="bsinsertData" parameterType="com.exe.dto.StoryDTO">
+	insert into board_story(pageUserEmail, num, subject, content, likecount, registration, tag)
+	values(#{pageUserEmail}, #{num}, #{subject}, #{content},0,sysdate,#{tag})
+</insert>
+
+<insert id="biinsertData" parameterType="com.exe.dto.ImageFileDTO">
+	insert into board_imagefile(pageUserEmail, num, saveFileName, originalFileName) values(#{pageUserEmail}, #{num}, #{saveFileName}, #{originalFileName})
+</insert>
+
+<insert id="bcinsertData" parameterType="com.exe.dto.CommentDTO">
+	insert into board_comment(pageUserEmail, num, nickname, bcomment, comment_num)
+	values(#{pageUserEmail}, #{num},#{nickname}, #{bcomment}, #{comment_num})
+</insert>
+
+<select id="bpgetReadData" parameterType="String" resultType="com.exe.dto.ProfileDTO">
+	select pageUserEmail, pageUserName, profileImage, boardNum, follower, nickname from board_profile where pageUserEmail=#{pageUserEmail}
+</select>
+
+<select id="bpgetList" parameterType="String" resultType="com.exe.dto.ProfileDTO">
+	select pageUserEmail, pageUserName, profileImage, boardNum, follower, nickname from board_profile 
+	where pageUserEmail like '%' || #{searchValue} || '%'
+</select>
+
+<select id="bigetLists1" parameterType="String" resultType="com.exe.dto.ImageFileDTO">
+	select num, saveFileName from board_imagefile where saveFileName like '%' || 'main' || '%' and pageUserEmail=#{pageUserEmail}
+	order by num desc
+</select>
+
+<select id="bsgetReadData" parameterType="hashMap" resultType="com.exe.dto.StoryDTO">
+	select subject, content, likecount, registration, tag from board_story
+	where pageUserEmail=#{pageUserEmail} and num=#{num}
+</select>
+
+<select id="bcgetLists" parameterType="hashMap" resultType="com.exe.dto.CommentDTO">
+	select pageUserEmail,num, nickname, bcomment,comment_num from board_comment
+	where pageUserEmail=#{pageUserEmail} and num=#{num} order by comment_num asc
+</select>
+
+<select id="bigetLists2" parameterType="hashMap" resultType="com.exe.dto.ImageFileDTO">
+	select saveFileName from board_imagefile where pageUserEmail=#{pageUserEmail} and num=#{num}
+</select>
+
+<update id="bsupdateData" parameterType="hashMap">
+	update board_story set subject=#{subject}, content=#{content}, tag=#{tag}
+	where pageUserEmail=#{pageUserEmail} and num=#{num}
+</update>
+
+<delete id="bsdeleteData" parameterType="hashMap">
+	delete board_story where pageUserEmail=#{pageUserEmail} and num=#{num}
+</delete>
+
+<delete id="bideleteData" parameterType="hashMap">
+	delete board_imagefile where pageUserEmail=#{pageUserEmail} and num=#{num}
+</delete>
+
+<delete id="bcdeleteData" parameterType="hashMap">
+	delete board_comment where pageUserEmail=#{pageUserEmail} and num=#{num} and comment_num=#{comment_num}
+</delete>
+
+</mapper>

@@ -1,0 +1,96 @@
+.c-hero-range-showcase__panel .c-Zone__item {
+    flex-basis: auto !important;
+    display: block !important
+}
+
+.c-hero-range-showcase__wrapper {
+    background-size: 100%;
+    background-position: top !important;
+    padding-top: 50vw
+}
+
+.c-hero-range-showcase__wrapper .ProductListElement__price {
+    margin: 0 auto;
+    position: relative;
+    padding: 0
+}
+
+.c-hero-range-showcase__wrapper,
+.c-hero-range-showcase__wrapper.c-Zone--dark {
+    background-color: #000
+}
+
+.c-hero-range-showcase__wrapper.c-Zone--light {
+    background-color: #fff
+}
+
+.c-hero-range-showcase__wrapper .c-Zone__headline .c-Heading h2 {
+    text-align: center;
+    padding: 1em 0
+}
+
+.c-hero-range-showcase__panel img,
+.c-hero-range-showcase__panel svg {
+    max-width: 320px;
+    display: block;
+    margin: 0 auto 1em
+}
+
+.c-hero-range-showcase__panel .c-Heading__xs {
+    font-weight: 500
+}
+
+.c-hero-range-showcase__header {
+    text-align: center
+}
+
+.c-hero-range-showcase__panel .c-ProductColumn {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch
+}
+
+.c-hero-range-showcase__panel .c-ProductColumnItem {
+    width: 100%;
+    padding: 1em 0 0
+}
+
+.c-hero-range-showcase__panel .c-ProductColumn .n-product-column-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33%;
+    padding: 1.5em 0 0
+}
+
+.c-hero-range-showcase__panel .c-ProductColumnItem__Visual_Reflect {
+    display: none
+}
+
+.c-hero-range-showcase__panel .c-AddToCart {
+    text-align: center
+}
+
+@media (min-width:768px) {
+    .c-hero-range-showcase__panel .c-ProductColumnItem__Visual_Reflect {
+        display: block
+    }
+    .c-hero-range-showcase__wrapper {
+        background-size: initial;
+        background-position: 50%;
+        padding-top: 0
+    }
+    .c-hero-range-showcase__panel .c-ProductColumn {
+        width: 100%;
+        flex-wrap: nowrap
+    }
+    .c-hero-range-showcase__panel .c-Zone__headline {
+        padding: 18px 0;
+        background-position: 50% !important
+    }
+    .c-hero-range-showcase__panel .c-ProductColumnItem {
+        padding: inherit
+    }
+    .c-hero-range-showcase__panel .AddToBagButtonLarge {
+        width: auto
+    }
+}

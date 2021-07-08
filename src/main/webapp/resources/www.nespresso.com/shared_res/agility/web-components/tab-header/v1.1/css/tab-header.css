@@ -1,0 +1,166 @@
+n-tab-header {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 -3px
+}
+
+n-tab-header button {
+    font-family: Lucas, Open Sans, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    width: 140px;
+    height: 70px;
+    transition: .3s;
+    position: relative;
+    border: none;
+    border-bottom: 2px solid #000;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: .094em
+}
+
+n-tab-header button:not(active) {
+    font-weight: 500
+}
+
+n-tab-header button.active {
+    font-weight: 600
+}
+
+n-tab-header[contrast=dark] button {
+    border-bottom: 2px solid #fff
+}
+
+n-tab-header .tablinks .n-shuffler {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    margin-left: .188em;
+    transition: transform .2s ease-in
+}
+
+n-tab-header .tablinks .n-shuffler .n-shuffler-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease-in-out;
+    height: 4.5em
+}
+
+n-tab-header .tablinks span {
+    display: inline-block;
+    color: #000;
+    padding-top: 1.25em;
+    font-size: .813em;
+    position: absolute;
+    top: 1em;
+    left: 33%
+}
+
+n-tab-header .tablinks span,
+n-tab-header[contrast=light] .tablinks span {
+    color: #919090;
+    transition: margin .5s
+}
+
+n-tab-header[contrast=dark] .tablinks span {
+    color: #afb3b2
+}
+
+n-tab-header .tablinks:hover span,
+n-tab-header[contrast=light] .tablinks:hover span {
+    color: #000
+}
+
+n-tab-header[contrast=dark] .tablinks:hover span {
+    color: #fff
+}
+
+n-tab-header[contrast=light] button.active span,
+n-tab-header button.active span {
+    color: #000
+}
+
+n-tab-header[contrast=dark] button.active span {
+    color: #fff
+}
+
+n-tab-header .tablinks:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #000;
+    bottom: -6px;
+    left: 55%;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity .3s ease-in-out, bottom .3s ease-in-out;
+    position: absolute
+}
+
+n-tab-header:only-child .tablinks:after {
+    left: 50%
+}
+
+n-tab-header[contrast=dark] .tablinks:after {
+    border-bottom: 5px solid #fff
+}
+
+n-tab-header .tablinks.active:after {
+    bottom: 0;
+    opacity: 1
+}
+
+n-tab-header .tablinks.active .n-shuffler {
+    transform: scale(1.1)
+}
+
+n-tab-header .tablinks.active .n-shuffler .n-shuffler-panel {
+    top: -40px;
+    left: 0
+}
+
+n-tab-header .tablinks:not(.active):hover {
+    color: #fff
+}
+
+n-tab-header .tablinks:not(.active):hover .n-shuffler {
+    transform: scale(1.1)
+}
+
+n-tab-header .tablinks:not(.active):hover .n-shuffler .n-shuffler-panel .img__act {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+n-tab-header .n-shuffler img {
+    margin: 0 auto
+}
+
+.n-shuffler,
+.n-shuffler-panel,
+.n-shuffler img,
+n-tab-header span {
+    pointer-events: none
+}
+
+n-tab-headercontent {
+    display: none;
+    padding: .5em 1em;
+    border-top: none
+}
+
+n-tab-header button:focus-visible>span {
+    outline: 3px solid #3a869d !important
+}

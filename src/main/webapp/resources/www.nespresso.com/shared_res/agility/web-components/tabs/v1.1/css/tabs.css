@@ -1,0 +1,8 @@
+.tablinks img {
+    pointer-events: none
+}
+
+.tabcontent {
+    display: none;
+    border-top: none
+}

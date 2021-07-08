@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 48 48"
+   version="1.1"
+   x="0px"
+   y="0px"
+   id="svg3490"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="icon-collapse.svg">
+  <metadata
+     id="metadata3510">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3508" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1408"
+     inkscape:window-height="954"
+     id="namedview3506"
+     showgrid="false"
+     inkscape:zoom="1.6162441"
+     inkscape:cx="43.192819"
+     inkscape:cy="12.541793"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3496" />
+  <g
+     id="g3492"
+     style="fill:none;stroke:none"
+     transform="translate(0,-57)">
+    <g
+       transform="translate(-996,-217)"
+       id="g3494">
+      <g
+         transform="matrix(0,0.5301357,-0.5301057,0,1040.6735,277.32411)"
+         id="g3496">
+        <rect
+           x="0"
+           y="0"
+           width="78"
+           height="78"
+           rx="9.8322639"
+           id="rect3498"
+           style="stroke:#989898;stroke-width:5" />
+        <g
+           transform="matrix(1.382855,0,0,1.1748568,16.832283,12.478294)"
+           id="g3500"
+           style="fill:#989898">
+          <rect
+             transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,13.496321,-5.5903593)"
+             x="-2.5"
+             y="10.5"
+             width="31.995689"
+             height="6"
+             rx="3"
+             id="rect3502" />
+          <rect
+             transform="matrix(-0.70710678,-0.70710678,-0.70710678,0.70710678,46.023233,19.063447)"
+             x="-2.5"
+             y="29.5"
+             width="31.995689"
+             height="6"
+             rx="3"
+             id="rect3504" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

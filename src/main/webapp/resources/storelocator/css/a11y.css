@@ -1,0 +1,19 @@
+/*!
+ * a11y.css
+ */
+
+.a11y-debug *:focus {
+    outline: 2px dotted red !important;
+}
+
+.a11y-hidden,
+.a11y-tabpanel-label {
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    position: absolute;
+}
+
+.a11y-tabpanel-panel[aria-hidden="true"] {
+    display: none;
+}

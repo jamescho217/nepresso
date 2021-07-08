@@ -1,0 +1,99 @@
+.c-CardHighlight,
+.c-CardHighlight:after,
+.c-CardHighlight:before,
+.c-CardHighlight_cta,
+n-card-highlight {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.c-CardHighlight,
+.c-CardHighlight * {
+    box-sizing: border-box
+}
+
+.c-CardHighlight .c-Zone__headline,
+.c-CardHighlight .c-Zone__item {
+    height: 400px
+}
+
+.c-CardHighlight {
+    display: inline-block;
+    max-width: 483px;
+    width: 483px;
+    text-align: center;
+    text-decoration: none
+}
+
+.c-CardHighlight .c-Zone {
+    background-size: cover
+}
+
+.c-CardHighlight .c-Zone .c-Zone__headline {
+    display: flex
+}
+
+.c-CardHighlight_cta {
+    flex-grow: 1
+}
+
+.c-CardHighlight_PopinCta {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+@media screen and (min-width:811px) {
+    .c-CardHighlight .c-Zone .c-Zone__headline {
+        padding: 24px 24px 2px
+    }
+}
+
+@media screen and (min-width:751px) and (max-width:810px) {
+    .c-CardHighlight,
+    .c-CardHighlight .c-Zone,
+    .c-CardHighlight .c-Zone__item {
+        height: 305px;
+        min-height: 305px
+    }
+    .c-CardHighlight_PopinCta {
+        bottom: 11px
+    }
+    .c-CardHighlight {
+        width: 352px
+    }
+}
+
+@media screen and (max-width:750px) {
+    .c-CardHighlight .c-Zone.c-Zone--auto-height,
+    .c-CardHighlight .c-Zone.c-Zone--auto-height .c-Zone__item {
+        min-height: inherit;
+        height: 100%
+    }
+    .c-CardHighlight .c-Zone.c-Zone--auto-height .c-Zone__content {
+        min-height: inherit;
+        height: 465px;
+        max-width: 335px;
+        width: 100%
+    }
+    .c-CardHighlight .c-Zone__headline {
+        height: 465px
+    }
+    .c-CardHighlight {
+        display: flex;
+        width: 100%;
+        flex: 1 0 100%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 335px
+    }
+    .c-CardHighlight .c-Zone__item {
+        min-height: 465px
+    }
+    .c-CardHighlight .c-Zone {
+        background-size: contain
+    }
+}

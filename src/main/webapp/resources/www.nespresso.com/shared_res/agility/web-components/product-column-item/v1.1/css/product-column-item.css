@@ -1,0 +1,77 @@
+.c-ProductColumnItem {
+    padding: 15px 15px 0
+}
+
+.c-ProductColumnItem,
+.c-ProductColumnItem__Content,
+.c-ProductColumnItem__Content_Reflect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color .4s ease-in-out
+}
+
+.c-ProductColumnItem__Content,
+.c-ProductColumnItem__Content_Reflect {
+    text-align: center
+}
+
+.c-ProductColumnItem__Image_Reflect .c-ProductColumnItem__Visual {
+    height: 34px;
+    margin-bottom: 16px
+}
+
+.c-ProductColumnItem__AddToCart {
+    height: 100px
+}
+
+.c-ProductColumnItem__Content_Reflect .c-Heading {
+    position: relative;
+    text-align: center
+}
+
+.c-ProductColumnItem__Image_Reflect {
+    position: relative
+}
+
+.c-ProductColumnItem__Visual_Reflect {
+    position: absolute;
+    left: 50%;
+    top: 31px;
+    transform: translateX(-50%) rotateX(180deg)
+}
+
+n-zone .c-ProductColumnItem__Visual_Reflect:after,
+n-zone[contrast=dark] .c-ProductColumnItem__Visual_Reflect:after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #000 0, #000 58%, rgba(0, 0, 0, .85) 69%, rgba(0, 0, 0, .4));
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr="#000000", endColorstr="#66000000", GradientType=0)
+}
+
+n-zone[contrast=light] .c-ProductColumnItem__Visual_Reflect:after {
+    background: linear-gradient(180deg, #fff 0, #fff 58%, hsla(0, 0%, 100%, .85) 69%, hsla(0, 0%, 100%, .4));
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr="#ffffff", endColorstr="#66ffffff", GradientType=0)
+}
+
+.c-ProductColumnItem__Visual_Reflect img {
+    height: 38px
+}
+
+@media screen and (min-width:768px) {
+    .c-ProductColumnItem__Image_Reflect .c-ProductColumnItem__Visual {
+        height: 50px;
+        margin-bottom: 8px
+    }
+    .c-ProductColumnItem__Visual_Reflect {
+        top: 33px
+    }
+    .c-ProductColumnItem__Visual_Reflect img {
+        height: 50px
+    }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+<!-- Spring에서는생략 -->
+<properties>
+	<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521:TestDB"/>
+	<property name="username" value="nespresso"/>
+	<property name="password" value="123"/>
+</properties>
+
+<typeAliases>
+	<typeAlias type="com.exe.dto.LoginDTO" alias="LoginDTO"/>
+	<typeAlias type="com.exe.dto.MyMachineDTO" alias="MyMachineDTO"/>
+	<typeAlias type="com.exe.dto.MyOrderDTO" alias="MyOrderDTO"/>
+	<typeAlias type="com.exe.dto.OrderListDTO" alias="OrderListDTO"/>
+</typeAliases>
+
+<environments default="development">
+	<environment id="development">
+		<transactionManager type="JDBC"/>
+		<dataSource type="POOLED">
+			<property name="driver" value="${driver}"/>
+			<property name="url" value="${url}"/>
+			<property name="username" value="${username}"/>
+			<property name="password" value="${password}"/>
+		</dataSource>
+	</environment>
+
+</environments>
+
+
+<mappers>
+	<mapper resource="com/exe/mybatis/faqMapper.xml"/>
+	<mapper resource="com/exe/mybatis/nesPdMapper.xml"/>
+	<mapper resource="com/exe/mybatis/nespressoMapper_login.xml"/>
+	<mapper resource="com/exe/mybatis/basketMapper.xml"/>
+	<mapper resource="com/exe/mybatis/boardMapper.xml"/>
+</mappers>
+
+</configuration>

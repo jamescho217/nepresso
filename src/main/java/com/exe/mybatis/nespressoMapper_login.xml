@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.user.inter.UserDaoInterface">
+
+
+<insert id="regUser" parameterType="LoginDTO">
+	insert into login(name,lName,email,pwd,ad1,ad2,pcode,extraAd,tel) values (#{name},#{lName},#{email},#{pwd},
+	#{ad1},#{ad2},#{pcode},#{extraAd},#{tel})
+</insert>
+
+<insert id="insertMachine" parameterType="MyMachineDTO">
+	insert into myMachine(num,email,pDate,pMonth,pYear,fileImage,fileName,pName) 
+	values (#{num},#{email},#{pDate},#{pMonth},#{pYear},#{fileImage},#{fileName},#{pName})
+</insert>
+	
+<!--  header + login page -->
+<select id="loginUser" resultType="LoginDTO">
+	select * from login where email=#{email}
+</select>
+
+<!-- 회원 인증키(난수) 생성 -->
+<update id="GetKey" parameterType="Map">
+	update login set user_key = #{param2} where email = #{param1}
+</update>
+<!-- 회원 인증키(난수) Y로 변경 -->
+<update id="alter_userKey" parameterType="Map">
+	update login set user_key = 'Y' where email = #{param1} and user_key = #{param2}
+</update>
+
+<select id="readUser" resultType="LoginDTO">
+	select name,lName,pwd,email,ad1,ad2,pcode,extraAd,tel,fileImage,fileName,pName from login where email=#{email} and pwd=#{pwd}
+</select>
+
+<!-- 이메일 중복 검사 -->
+<select id="checkOverEmail" parameterType="String" resultType="int">
+	select count(*) from login where email = #{email}
+</select>
+<!--  orderNumCheck -->
+<select id="ordernumCheck" parameterType="int" resultType="int">
+	select count(*) from orderList where orderNum =#{orderNum}
+</select>
+<!-- 임시 비번 -->
+<update id="searchPassword" parameterType="Map">
+		update login set pwd = #{param2} where email = #{param1}
+</update>
+
+<select id="userInfo" resultType="LoginDTO">
+		select * from login where email = #{email}
+	</select>
+
+
+<select id ="getReadDataMachine" parameterType="map" resultType="MyMachineDTO">
+	select num,email,pDate,pMonth,pYear,fileImage,fileName,pName from myMachine where email =#{email} and num =#{num}
+</select>
+
+<select id ="getReadDataInfo" parameterType="String" resultType="LoginDTO">
+	select name,lName,email,ad1,ad2,pcode,extraAd,tel from login where email=#{email}
+</select>
+
+<update id="updateAd_ok" parameterType="LoginDTO">
+	update login set ad1 =#{ad1}, ad2=#{ad2}, extraAd=#{extraAd}, pcode=#{pcode}, tel=#{tel} where email=#{email}
+</update>
+
+<update id="updatePinfo" parameterType="LoginDTO">
+	update login set name=#{name}, lName=#{lName}, email=#{email} where email=#{email}
+</update>
+
+<update id="updatePwd" parameterType="LoginDTO">
+	update login set pwd=#{pwd} where email=#{email}
+</update>
+
+<update id="updateMachineDate" parameterType="MyMachineDTO">
+	update myMachine set pDate=#{pDate},pMonth=#{pMonth},pYear=#{pYear} where email=#{email} and num=#{num}
+</update>
+
+<select id="getMachineList" resultType="MyMachineDTO">
+	select * from myMachine where email=#{email} order by num asc
+</select>
+
+<select id="getDataCount" resultType="int">
+	select nvl(count(*),0) from myMachine
+</select>
+
+<select id="getMaxNum" resultType="int">
+	select nvl(max(num),0) from myMachine
+</select>
+
+<delete id="deleteMachine" parameterType="int">
+	delete myMachine where num=#{num}
+</delete>
+
+<update id="alter_status" parameterType="Map">
+	update login set user_key = '배송중' where email = #{param1} and user_key = #{param2}
+</update>
+
+<insert id="insertMyOrder" parameterType="MyOrderDTO">
+	insert into myOrder(orderNum,email,orderDate,status,oPlace,transport,totalPrice) values
+	(#{orderNum},#{email},sysdate,#{status},#{oPlace},#{transport},#{totalPrice})
+</insert>
+
+<select id="getMyOrderlist" resultType="MyOrderDTO" parameterType="map">
+	select orderNum,email,to_char(orderDate,'MM-DD-YYYY') orderDate,status,oPlace,
+	transport,totalPrice from myOrder where email=#{email} order by orderNum asc
+</select>
+
+<select id="maxOrderNum" resultType="int">
+	select nvl(max(orderNum),0) from myOrder
+</select>
+
+<select id="readMyOrder" parameterType="map" resultType="MyOrderDTO">
+	select orderNum,email,to_char(orderDate,'MM-DD-YYYY') orderDate,status,oPlace,
+	transport,totalPrice from myOrder where email=#{email} and orderNum = #{orderNum}
+</select>
+
+<select id="getTotalPriceViaOrderNum" parameterType="map" resultType="MyOrderDTO">
+	select * from myOrder where email=#{email} and orderNum=#{orderNum}
+</select>
+
+<select id="getOrderListBottm" parameterType="map" resultType="OrderListDTO">
+	select num,email,orderNum,type1,type2,modelName1,imageUrl,price,quantity 
+	from orderList where email=#{email} and type1 = #{type1} and type2=#{type2} and orderNum =#{orderNum}
+	order by num
+</select>
+
+<insert id="insertOrderList" parameterType="OrderListDTO">
+	insert into orderList(num,email,orderNum,type1,type2,modelName1,imageUrl,price,quantity)
+	values (#{num},#{email},#{orderNum},#{type1},#{type2},#{modelName1},#{imageUrl},#{price},#{quantity})
+</insert>
+
+<select id="getOrderListCount" parameterType="String" resultType="int">
+	select count(*) from orderList
+	where email = #{email}
+</select>
+
+<select id="getMyOrderNum" parameterType="String" resultType="int">
+	select count(*) from myOrder
+	where email = #{email}
+</select>
+
+<select id="maxNumOrderList" resultType="int">
+	select nvl(max(num),0) from orderList
+</select>
+
+<!-- 해당 유저 주문 총 금액 -->
+<select id="getTotalPrice" parameterType="String" resultType="int">
+	select sum(price*quantity) from orderList
+	where email = #{email}
+</select>
+	
+</mapper>

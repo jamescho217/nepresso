@@ -1,0 +1,50 @@
+.c-AddToCartDefault {
+    border: 1px solid #3d8705;
+    background-color: #3d8705;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .3);
+    text-align: center;
+    border-radius: 3px;
+    font-size: 23px;
+    margin: 0 auto;
+    cursor: pointer
+}
+
+.c-AddToCartDefault span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.ProductListElement__price {
+    font-size: .875rem;
+    font-weight: 700;
+    color: #3d8705;
+    white-space: nowrap;
+    font-family: Nespresso Lucas, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Helvetica, Arial, Tahoma, sans serif !important;
+    line-height: 28px;
+    text-align: center
+}
+
+n-zone .AddToBagButtonLarge {
+    width: 100% !important;
+    display: table
+}
+
+n-zone .AddToBagButtonLarge__basketIcon {
+    top: auto
+}
+
+n-zone .AddToBagButtonLarge__label {
+    white-space: normal;
+    vertical-align: middle
+}
+
+n-zone .AddToBagButtonLarge__basketIcon {
+    top: 50%;
+    transform: translateY(-50%)
+}

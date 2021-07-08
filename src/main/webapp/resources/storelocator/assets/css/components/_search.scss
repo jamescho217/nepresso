@@ -1,0 +1,303 @@
+.results-empty {
+	text-align: center;
+}
+
+.form-search {
+	background: #FFF;
+	@include clearfix;
+	padding: 15px;
+	z-index: z('default');
+
+	&.hidden-clear-btn {
+
+		.clear-btn {
+			display: none;
+		}
+
+		.form-text {
+			padding-right: 40px;
+		}
+	}
+
+	.clear-btn {
+		/*position: absolute;
+		background: url(#{$img-dir}close_button.png);
+		background-size: cover;
+		width: 30px;
+		height:30px;
+		font-size:0;
+		margin-left:-70px;
+		margin-top:5px;
+		cursor: pointer;
+
+		&.hidden {
+			display: none;
+		}*/
+
+		position: absolute;
+		margin: 5px 0 0 -70px;
+		z-index: z('default', 10);
+		width: 30px;
+		height: 30px;
+		font-size: 0;
+		//transition: all 0.6s $in-out-expo;
+
+		&:before,
+		&:after {
+			content:'';
+			height: 2px;
+			top: 50%;
+			left: 50%;
+			width: 25px;
+			background: $grey-dark;
+			position: absolute;
+			opacity: 0.6;
+		}
+
+		&:before {
+			transform: translate3d(-50%, -50%, 0) rotate(45deg);
+		}
+
+		&:after {
+			transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+		}
+	}
+
+
+	.close-intro & {
+		padding: 7px;
+
+		@media #{md('s')} {
+			padding: 15px;
+		}
+	}
+
+	&.no-options {
+		.form-text {
+			width: 100%;
+
+			@media #{md('s')} {
+				width: calc(70% + 50px);
+			}
+		}
+
+		.trigger-localisation {
+			right: 0;
+		}
+	}
+
+	.form-text {
+		float: left;
+		padding-right: 70px;
+		width: calc(100% - 50px);
+
+		@media #{md('s')} {
+			width: 70%;
+		}
+
+		.close-intro & {
+			width: calc(100% - 50px);
+		}
+	}
+
+	.trigger-localisation {
+		position: absolute;
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 10px;
+		right: 50px;
+		transition: all 0.5s $in-out-sine;
+
+		@media #{md('s')} {
+			right: 30%;
+		}
+
+		.close-intro & {
+			right: 50px;
+		}
+
+		.icon {
+			* {
+				transition: all 0.4s ease;
+			}
+		}
+
+		&:hover {
+			.icon {
+				* {
+					fill: $gold;
+				}
+			}
+		}
+	}
+
+	.form-submit {
+		float: left;
+		width: 100%;
+		overflow: hidden;
+		margin-top: 10px;
+
+		@media #{md('s')} {
+			width: calc(30% - 60px);
+			margin-top: 0;
+			position: absolute;
+			right: 0;
+		}
+
+		.close-intro & {
+			width: 0%;
+			padding: 0;
+			opacity: 0;
+			display: none;
+
+			@media #{md('s')} {
+				top: 0;
+				height: 100%;
+			}
+		}
+	}
+
+	.trigger-options {
+		float: left;
+		margin-left: 10px;
+		z-index: z("dropdown");
+
+		@media #{md('s')} {
+			margin: 0 10px;
+		}
+
+		.close-intro & {
+			@media #{md('s')} {
+				margin-right: 0;
+			}
+		}
+
+		&.open {
+			.list-options {
+				opacity: 1;
+				visibility: visible;
+				transform: translate3d(0, 0, 0);
+			}
+
+
+			& > a {
+				&:before {
+					transform: scale3d(0, 0, 1) !important;
+				}
+
+				.icon {
+					* {
+						fill: #000 !important;
+					}
+				}
+			}
+		}
+
+		.list-options {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			padding: 10px 15px;
+			white-space: nowrap;
+			opacity: 0;
+			visibility: hidden;
+			transform: translate3d(0, -8px, 0);
+			padding-top: 20px;
+			transition: all 0.3s $in-out-sine;
+
+			&:before {
+				content:'';
+				top: 10px;
+				left: 0;
+				width: 100%;
+				bottom: 15px;
+				background: #FFF;
+				position: absolute;
+				border: 1px solid #000;
+				border-radius: 3px 0 3px 3px;
+			}
+
+			&:after {
+				position: absolute;
+				content:'';
+				top: -2px;
+				width: 40px;
+				right: 0;
+				border-left: 1px solid #000;
+				border-right: 1px solid #000;
+				background: #FFF;
+				height: 13px;
+			}
+
+			ul {
+				@include reset-ul;
+
+				li {
+					padding: 6px 0;
+				}
+			}
+		}
+
+		& > a {
+			width: 40px;
+			height: 40px;
+			display: block;
+			overflow: hidden;
+			border: 1px solid #000;
+			border-radius: 3px;
+			text-align: center;
+			line-height: 38px;
+
+			&.disabled-link {
+				border-color: #F3F3F3;
+				pointer-events: none;
+				cursor: default;
+				background-color: #F3F3F3;
+				color: #6E6E6E;
+				box-shadow: none;
+				.icon {
+					* {
+						fill: #6E6E6E;
+
+					}
+				}
+			}
+
+			&:before {
+				content:'';
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-left:-1px;
+				margin-top:-1px;
+				border: 1px solid #000;
+				background: #000;
+				border-radius: 3px;
+				transform: scale3d(0,0,1);
+				transition: all 0.5s $in-out-expo;
+			}
+
+			.icon {
+				* {
+					fill: #000;
+					transition: all 0.5s $in-out-expo;
+				}
+			}
+
+			/*&:hover {
+				&:before {
+					transform: scale3d(1, 1, 1);
+				}
+
+				.icon {
+					* {
+						fill: #FFF;
+					}
+				}
+			}*/
+		}
+	}
+}

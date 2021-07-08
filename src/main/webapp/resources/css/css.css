@@ -1,0 +1,179 @@
+.ProductDetails__information {
+    box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, 0.05);
+    padding: 32.5px 56px !important;
+    margin: 2em -1em 2em !important;
+    font-family: Lucas, "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    max-width: 100%;
+    min-height: 560px;
+}
+
+.FreeHTML ul {
+    list-style: none;
+}
+
+.FreeHTML ol,
+.FreeHTML ul {
+    padding-left: 0px !important;
+}
+
+.ProductDetails__marketingFeatures {
+    margin-top: 29px;
+}
+
+.ProductDetails__information .ProductDetails__flavors {
+    margin-bottom: 2px;
+    padding-top: 0;
+    font-style: normal;
+    color: #000;
+}
+
+.ProductDetails__information .ProductDetails__price {
+    letter-spacing: .05em;
+    margin-bottom: 15px;
+}
+
+.ProductDetails__information {
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+.ProductDetails__information .ProductDetails__add-to-basket,
+.ProductDetails__information .AddToBagButtonLarge {
+    width: 100%;
+}
+
+.ProductDetails__col-wrapper:before,
+.ProductDetails__col-wrapper:after {
+    content: "";
+    display: table;
+}
+
+.ProductDetails__col-wrapper {
+    padding-bottom: 20px;
+}
+
+.ProductDetails__col-data {
+    float: right;
+}
+
+.ProductDetails_info {
+    float: left;
+    padding-right: 8px;
+    font-weight: 800;
+}
+
+.ProductDetails__description {
+    padding-top: 10px;
+}
+
+. .ProductDetails__intensity {
+    font-size: 0.85rem;
+    letter-spacing: .005em;
+    color: #000;
+    padding-top: 40px;
+}
+
+.ProductDetails__intensity .step {
+    padding-top: 0px;
+}
+
+.ProductDetails__intensity .step .int {
+    font-size: 0.7em;
+    letter-spacing: 0;
+}
+
+.ProductDetails__intensity .step-label {
+    display: inline-block;
+    color: #757575;
+    padding: 0 7px;
+}
+
+.ProductDetails__cupSize {
+    font-size: 0.85rem;
+    letter-spacing: .005em;
+    color: #000;
+    padding-top: 4px;
+}
+
+.ProductDetails__cupSize .ProductDetails__col-label {
+    padding-top: 12px;
+}
+
+.ProductDetails__cupSize content {
+    display: block;
+}
+
+.ProductDetails__cupSize content:before,
+.ProductDetails__cupSize content:after {
+    content: "";
+    display: table;
+}
+
+.ProductDetails__cupSize content:after {
+    clear: both;
+}
+
+.ProductDetails__cupSize li {
+    opacity: 0.25;
+    float: left;
+    padding: 0 3px;
+}
+
+.ProductDetails__cupSize li.ProductDetails__cup-active {
+    opacity: 1;
+}
+
+.ProductDetails__cupSize li:first-child {
+    padding-left: 0;
+}
+
+.ProductDetails__cupSize li {
+    margin-top: -17px;
+}
+
+.ProductDetails__cupSize li:last-child {
+    padding-right: 0;
+}
+
+.ProductDetails__cupSize img {
+    display: block;
+    margin: 0 auto;
+    width: 2em;
+}
+
+.ProductDetails__specs {
+    display: none;
+}
+
+.ProductDetails__intensity,
+.ProductDetails_Aromatic,
+.ProductDetails__Notes,
+.ProductDetails__Origin {
+    font-size: 0.85rem;
+    letter-spacing: .005em;
+    color: #000;
+    padding-top: 16px;
+}
+
+.ProductDetails__Origin {
+    margin-bottom: 16px;
+}
+
+div.ProductDetails__intensity.ProductDetails__col-wrapper {
+    padding-bottom: 33px;
+}
+
+@media screen and (max-width: 1024px) {
+    .ProductDetails__information {
+        margin: 2em !important;
+    }
+    .ProductDetails__taxes-information {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
+    .ProductDetails__information {
+        margin: 0em !important;
+        padding: 30px 20px !important;
+    }
+}

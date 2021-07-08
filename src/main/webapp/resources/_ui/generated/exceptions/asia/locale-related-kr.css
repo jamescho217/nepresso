@@ -1,0 +1,11 @@
+/**************************************
+ * RULES
+ **************************************/
+
+body {
+    word-break: keep-all;
+}
+
+.cart-open .dialog-title {
+    font-family: 'Trebuchet MS', 'Helvetica', 'Arial', sans-serif;
+}

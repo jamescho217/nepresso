@@ -1,0 +1,235 @@
+html {
+	overflow: hidden;
+}
+
+.box-locator {
+	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.05);
+	border-radius: 3px;
+	position: absolute;
+	top: 40%;
+	//overflow: hidden;
+	width: 800px;
+	max-width: 95%;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+	transition: all 0.5s $in-out-sine;
+	//min-height: 10px;
+	z-index: z('default', 5);
+
+	h2 {
+		font-size: 1em;
+		margin: 0;
+	}
+
+	@media #{md('s')} {
+		top: 30%;
+		z-index: z('default', 15);
+	}
+
+	.close-intro & {
+		max-width: 100%;
+		width: 100%;
+		top: 0;
+		overflow: hidden;
+		min-height: 100%;
+
+		@media #{md('s')} {
+			max-width: 95%;
+			width: 80%;
+			top: 25%;
+			min-height: calc(75% - 50px);
+			z-index: z('default', 25);
+		}
+
+		@media #{md('m')} {
+			top: 50px;
+			min-height: calc(100% - 100px);
+			//transform: translate3d(0, 0, 0);
+			transform: inherit;
+			left: 12%;
+			width: 400px;
+		}
+	}
+	.box-top & {
+		top: 15px;
+		min-height: calc(100% - 30px);
+	}
+
+	.tabs {
+		z-index: 5;
+		background: white;
+
+		.close-intro & {
+			height: 50px;
+
+			@media #{md('s')} {
+				height: auto;
+			}
+		}
+
+		ul {
+			@include reset-ul;
+			display: table;
+			table-layout: fixed;
+			letter-spacing: 1px;
+			line-height: 1.1em;
+			text-align: center;
+			width: 100%;
+
+			.close-intro & {
+				height: 100%;
+
+				@media #{md('s')} {
+					height: inherit;
+				}
+			}
+
+			li {
+				display: table-cell;
+				width: 100%;
+
+				&:first-child {
+					border-left: 0;
+				}
+
+				a {
+					display: block;
+					width: 100%;
+					color: $grey-mid;
+					font-weight: 700;
+					padding-bottom: 10px;
+					transition: all 0.4s ease;
+					border-left: 1px solid rgba(#000, 0.1);
+					border-bottom: 1px solid rgba(#000, 0.1);
+					background: $grey-light;
+
+					.close-intro & {
+						height: 50px;
+
+						@media #{md('s')} {
+							height: inherit;
+						}
+
+						.label {
+							//display: inline-block;
+							height: auto;
+							font-size: 1em;
+							line-height: 1.1em;
+							position: absolute;
+							top: 50%;
+							left:0;
+							right: 0;
+							transform: translateY(-50%);
+							display: inline-flex;
+							align-items: center;
+
+							@media #{md('s')} {
+								height: inherit;
+								font-size: inherit;
+								line-height: inherit;
+								position: inherit;
+								top: inherit;
+								left: inherit;
+								right: inherit;
+								transform: inherit;
+								display: inline-flex;
+								align-items: center;
+							}
+						}
+					}
+
+					&.active {
+						background: #FFF;
+						border-bottom-color: #FFF;
+						color: #000;
+
+						.icon {
+							opacity: 1;
+						}
+					}
+
+					.label {
+						padding: 0 0.4em;
+						//display: inline-block;
+						//transition: all 0.5s $in-out-expo;
+						height: #{1.1 * 3.2}em;
+						font-size: 0.9em;
+						display: inline-flex;
+						align-items: center;
+
+						@media #{md('s')} {
+							//transform: scale3d(1.2, 1.2, 1);
+							font-size: 1.2em;
+							//display: inline-block;
+							//align-items: inherit;
+							height: #{1.1 * 2}em;
+						}
+
+						.close-intro & {
+							transform: translateY(-50%);
+							height: auto;
+							vertical-align: middle;
+							display: inline-block;
+
+							@media #{md('s')} {
+								transform: scale3d(1, 1, 1);
+								height: #{1.1 * 2}em;
+								display: inline-flex;
+								align-items: center;
+							}
+						}
+					}
+
+					.icon {
+						display: block;
+						margin: auto;
+						opacity: 0.4;
+						//transition: all 0.3s ease;
+						width: 50px;
+						height: 50px;
+						line-height: 50px;
+
+						@media #{md('s')} {
+							display: block;
+							width: 80px;
+							height: 70px;
+							line-height: 70px;
+						}
+
+						.close-intro & {
+							display: none;
+
+							@media #{md('s')} {
+								display: block;
+							}
+						}
+
+						img {
+							max-width: 100%;
+							display: inline-block;
+							vertical-align: middle;
+							transition: all 0.5s $in-out-back;
+						}
+					}
+
+					&:hover {
+						background: #FFF;
+						border-bottom-color: #FFF;
+						color: #000;
+
+						.label {
+							//transform: translate3d(0, 3px, 0);
+						}
+
+						.icon {
+							opacity: 1;
+							img {
+								//transform: scale3d(1.2, 1.2, 1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
