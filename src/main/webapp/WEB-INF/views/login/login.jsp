@@ -873,10 +873,6 @@ html {
 					console.log(em);
 					console.log(pw);
 					
-					
-					
-					
-					
 					var remember_us = $('#remember').is(':checked');
 					
 					$.ajax({

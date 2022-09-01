@@ -928,7 +928,7 @@ html {
 														aria-invalid="false" type="text" value="" maxlength="50">
 														<div id="email_check"></div>
 														<script type="text/javascript"> 
-			
+				//when the element loses focus
 				$("#email").blur(function(){
 					
 					
